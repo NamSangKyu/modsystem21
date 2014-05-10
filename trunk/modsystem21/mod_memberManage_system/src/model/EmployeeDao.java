@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import config.OracleConfig;
+
 public class EmployeeDao {
 	private static EmployeeDao instance = new EmployeeDao();
 	private Connection conn;
@@ -13,9 +15,9 @@ public class EmployeeDao {
 		super();
 		// TODO Auto-generated constructor stub
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName(OracleConfig.Driver);
 			conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/xe", "root", "1234");
+					OracleConfig.URL, OracleConfig.USER, OracleConfig.PASS);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -29,7 +31,8 @@ public class EmployeeDao {
 	}
 	public boolean insertEmployee(EmployeeVO vo) {
 		// TODO Auto-generated method stub
-		String sql = "insert into employee values(?,md5(?),?,?,?,?)";
+		//String sql = "insert into employee values(?,md5(?),?,?,?,?)";
+		String sql = "insert into employee values(?,?,?,?,?,?)";
 		PreparedStatement pstmt = null;
 		boolean control = false;
 		try {
@@ -54,7 +57,8 @@ public class EmployeeDao {
 	}
 	public EmployeeVO login(String id, String pass) {
 		// TODO Auto-generated method stub
-		String sql = "select * from employee where id = ? and pass = md5(?)";
+		//String sql = "select * from employee where id = ? and pass = md5(?)";
+		String sql = "select * from employee where id = ? and pass = ?";
 		PreparedStatement pstmt = null;
 		EmployeeVO vo = null;
 		
