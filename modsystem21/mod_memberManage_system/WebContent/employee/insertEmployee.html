@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/all.css">
+<script type="text/javascript">
+	
+	function hostSelect(host) {
+		var area = document.getElementById("email"); 	
+		if(host.value == "1"){
+			area.innerHTML = "<input type='text' id='i_host'>";
+		}else{
+			area.innerHTML = "";
+		}
+	}
+	
+	function idCheck() {
+		var id = document.getElementById("id");
+		var eMail = document.getElementById("eMail");
+		
+		if(id.value.length < 5){
+			alert("아이디는 5글자 이상 입력하세요");
+			return;
+		}
+		
+		if(passEquals()==false){
+			return;			
+		}
+		
+		
+		document.m_insert.submit();
+	}
+
+	function passEquals() {
+		var pass = document.getElementById("pass1").value;
+		if(pass.length < 8){
+			alert("암호는 8글자 이상 입력해 주세요");
+			document.getElementById("pass1").value = "";
+			return false;
+		}else if(!isNaN(pass)){
+			alert("암호는 영문자와 같이 입력해주세요.");
+			document.getElementById("pass1").value = "";
+			return false;
+		}
+		return true;
+	}
+	function passCheck() {
+		var pass1 = document.getElementById("pass1").value;
+		var pass2 = document.getElementById("pass2").value;
+		var area = document.getElementById("passArea");
+
+		if(pass1==pass2)
+			area.innerHTML = "입력하신 패스워드가 일치 합니다.";
+		else
+			area.innerHTML = "입력하신 패스워드가 일치 하지 않습니다.";
+	}
+	function cancel() {
+		history.back();
+	}
+</script>
+</head>
+<body>
+<form action="Dispatcher" method="post" name="m_insert">
+<input type="hidden" name="command" value="employeeInsert">
+<table border="0" width="350" align="center" class="middle">
+	<tr>
+		<td width="100">아이디</td><td><input type="text" id="id" name="id"></td>
+	</tr>
+	<tr>
+		<td>암호</td><td><input type="password" id="pass1" name="pass1"></td>
+	</tr>
+	<tr>
+		<td>암호확인</td><td><input type="password" id="pass2" name="pass2" onkeyup="passCheck()"><br><span id="passArea"></span></td>
+	</tr>
+	<tr>
+		<td>이메일</td>
+		<td><input type="text" id="eId" name="eId">@
+		<select id="host" onclick="hostSelect(host)">
+			<option value="hanmail.net">hanmail.net</option>
+			<option value="nate.com">nate.com</option>
+			<option value="naver.net">naver.com</option>
+			<option value="gmail.com">gmail.com</option>
+			<option value="1">직접입력</option> 
+		</select>
+		<span id="email"></span>
+		
+		</td>
+	</tr>
+	<tr>
+		<td>부서</td>
+		<td>
+		<select name="dept">
+			<option value="0">사업부</option>
+			<option value="1">교육부</option>
+			<option value="2">관리부</option>
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td>직급</td>
+		<td>
+		<select name="position" multiple="multiple" size="7">
+			<option value="0">부장</option>
+			<option value="1">과장</option>
+			<option value="2">대리</option>
+			<option value="3">주임</option>
+			<option value="4">사원</option>
+			<option value="5">강사</option>
+		</select>
+		</td>
+	</tr>
+	<tfoot>
+	<tr>
+		<td colspan="2" align="right">
+			<input type="button" value="회원가입" onclick="idCheck()">
+			<input type="button" value="가입취소" onclick="cancel()">
+		</td>
+	</tr>
+	</tfoot>
+</table>
+</form>
+</body>
+</html>

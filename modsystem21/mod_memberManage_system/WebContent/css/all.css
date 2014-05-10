@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+.middle{
+		margin-top: 10%;
+}
+.index{
+	margin-top: 10%;
+	background-image: url("../img/main_back.jpg");
+	background-repeat:no-repeat;
+	background-size: 100%, 60%;
+	font-size: 20px;
+	font-weight:bold;
+	color: white;
+}
+.s_input{
+	border-color: black;
+	border-bottom-style:solid;
+	text-align: center;	
+}
+.title{
+	font-size: x-large;
+	text-align: center;	
+}
+.s_table{
+	width: 100%;
+	border-collapse: collapse;
+}
