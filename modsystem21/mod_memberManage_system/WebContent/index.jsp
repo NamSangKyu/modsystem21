@@ -33,7 +33,6 @@ function callback() {
 	if (xhr.readyState == 4) {// 응답 완료 4 
 		if (xhr.status == 200) {// 정상 응답받은 상태  
 			var str = xhr.responseText;
-			alert(str);
 			if(str == 1){
 				alert("로그인 실패 ID/Password를 확인하세요");
 				document.getElementById("id").value = "";
@@ -56,6 +55,7 @@ function enterPress(e) {
 <body>
 <c:choose>
 	<c:when test="${sessionScope.vo==null}">
+
 	<form action="Dispatcher">
 	<div class="index" align="center">MOD 회원관리 시스템<br>
 		<table>
@@ -81,6 +81,9 @@ function enterPress(e) {
 		</table>	
 	</div>
 	</form>
+	<script type="text/javascript">
+		document.getElementById("id").focus();
+	</script>
 	</c:when>
 	<c:otherwise>
 	<script type="text/javascript">
