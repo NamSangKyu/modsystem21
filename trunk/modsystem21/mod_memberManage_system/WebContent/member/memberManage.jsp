@@ -8,5 +8,6 @@
 </head>
 <body>
 ${sessionScope.vo.name}님 로그인<br><br>
+<a href="update.jsp">개인 정보 수정</a>
 </body>
 </html>

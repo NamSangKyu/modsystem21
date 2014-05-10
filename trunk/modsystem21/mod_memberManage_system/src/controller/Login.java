@@ -1,5 +1,8 @@
 package controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -15,9 +18,24 @@ public class Login implements Controller {
 			HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		EmployeeVO vo = EmployeeService.getInstance().login(request.getParameter("id"),request.getParameter("pass"));
-		HttpSession session = request.getSession();
-		session.setAttribute("vo", vo);
-		return new ModelAndView("member/memberManage.jsp", true);
+		PrintWriter pw;
+		ModelAndView mv = null;
+		try {
+			pw = response.getWriter();
+			if(vo != null){
+				HttpSession session = request.getSession();
+				session.setAttribute("vo", vo);
+				pw.println(0);
+				mv = new ModelAndView("member/memberManage.jsp", true);
+			}else{
+				pw.println(1);
+				pw.close();
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return mv;
 	}
 
 }
