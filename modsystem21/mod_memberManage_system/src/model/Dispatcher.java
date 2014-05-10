@@ -42,8 +42,13 @@ public class Dispatcher extends HttpServlet {
 		
 */		Controller controller = hm.createController(request.getParameter("command"));
 		ModelAndView mv = controller.execute(request, response);
-		
-		//response.sendRedirect(null);
+		if(mv != null){
+			if(mv.isRedirect()){
+				response.sendRedirect(mv.getPath());
+			}else{
+				request.getRequestDispatcher(mv.getPath()).forward(request, response);
+			}
+		}
 	}
 
 	/**

@@ -34,7 +34,7 @@ function callback() {
 		if (xhr.status == 200) {// 정상 응답받은 상태  
 			var str = xhr.responseText;
 			alert(str);
-			if(str == "1"){
+			if(str == 1){
 				alert("로그인 실패 ID/Password를 확인하세요");
 				document.getElementById("id").value = "";
 				document.getElementById("pass").value = "";
@@ -44,6 +44,11 @@ function callback() {
 		}
 	}
 }
+function enterPress(e) {
+	if(e.keyCode==13)
+		startRequest();
+	
+}
 
 </script>
 
@@ -52,6 +57,7 @@ function callback() {
 <c:choose>
 	<c:when test="${sessionScope.vo==null}">
 	<form action="Dispatcher">
+	<div class="index" align="center">MOD 회원관리 시스템<br>
 		<table>
 		<tr>
 			<td>
@@ -66,20 +72,20 @@ function callback() {
 				비밀번호
 			</td>
 			<td>
-				<input type="password" name="pass" id="pass">
+				<input type="password" name="pass" id="pass" onkeydown="enterPress(event)">
 			</td>
 		</tr>
 		<tr>
-			<td colspan="2" align="right"><a href="member/insertMember.html"><input type="button" value="회원가입"></a><input type="button" value="로그인" onclick="startRequest()"></td>
+			<td colspan="2" align="right"><a href="member/insertMember.html"><input type="button" value="회원가입"></a><input type="button" value="로그인" onclick="startRequest()" ></td>
 		</tr>
 		</table>	
-	
+	</div>
 	</form>
 	</c:when>
 	<c:otherwise>
-	${sessionScope.vo.name}님 로그인<br><br>
-	<a href="update.jsp">개인 정보 수정</a>
-	<a href="member/memberManage.jsp">회원관리 페이지</a>
+	<script type="text/javascript">
+	window.location = "member/memberManage.jsp";
+	</script>
 	</c:otherwise>
 </c:choose>
 </body>
