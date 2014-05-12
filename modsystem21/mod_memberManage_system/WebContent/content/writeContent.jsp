@@ -5,11 +5,17 @@
 <head>
 <meta charset="UTF-8">
 <title>글쓰기 페이지</title>
+<script type="text/javascript">
+	function selectManager() {
+		window.open("../Dispatcher?command=selectManager", "해당 매니저 선택창", "menu=no, toolbar=no", "width=360,height=240,top=200,left=300");		
+	}
+
+</script>
 </head>
 <body>
-	<form action="Dispatcher">
+	<form name="insert" action="Dispatcher">
 		<input type="hidden" name="command" value="insertContent">
-		<table class="">
+		<table align="center">
 			<tr>
 				<td>제목</td><td><input type="text" name="title"></td>
 			</tr>
@@ -17,7 +23,7 @@
 				<td>작성자</td><td><input type="text" name="writer" value="${sessionScope.vo.name}"></td>
 			</tr>
 			<tr>
-				<td>담당자</td><td><input type="text" name="writer"></td>
+				<td>담당자</td><td><input type="text" name="manager" readonly="readonly"><input type="button" value="담당자 선택" onclick="selectManager()"></td>
 			</tr>
 			<tr>
 				<td colspan="2">내용</td>

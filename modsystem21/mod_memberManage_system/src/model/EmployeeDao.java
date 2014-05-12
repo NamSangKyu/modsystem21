@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import config.OracleConfig;
 
@@ -57,8 +58,8 @@ public class EmployeeDao {
 	}
 	public EmployeeVO login(String id, String pass) {
 		// TODO Auto-generated method stub
-		//String sql = "select * from employee where id = ? and pass = md5(?)";
-		String sql = "select * from employee where id = ? and pass = ?";
+		String sql = "select * from employee where id = ? and pass = md5(?)";
+		
 		PreparedStatement pstmt = null;
 		EmployeeVO vo = null;
 		
@@ -85,6 +86,37 @@ public class EmployeeDao {
 		
 		
 		return vo;
+	}
+	public ArrayList<EmployeeVO> getEmployeeList() {
+		// TODO Auto-generated method stub
+		String sql = "select * from employee";
+		
+		PreparedStatement pstmt = null;
+		ArrayList<EmployeeVO> list = new ArrayList<EmployeeVO>();
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				EmployeeVO vo = new EmployeeVO();
+				vo.setId(rs.getString(1));
+				vo.seteId(rs.getString(3));
+				vo.setName(rs.getString(4));
+				vo.setDept(rs.getString(5));
+				vo.setPosition(rs.getString(6));
+				list.add(vo);
+			}
+			if(list.size()==0)
+				list = null;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+				
+		return list;
 	}
 	
 }
