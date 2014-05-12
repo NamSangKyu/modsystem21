@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class EmployeeService {
 	private static EmployeeService instance = new EmployeeService();
 	private EmployeeDao dao = EmployeeDao.getInstance();
@@ -20,6 +22,11 @@ public class EmployeeService {
 	public EmployeeVO login(String id, String pass) {
 		// TODO Auto-generated method stub
 		return dao.login(id, pass);
+	}
+
+	public ArrayList<EmployeeVO> getEmployeeList() {
+		// TODO Auto-generated method stub
+		return dao.getEmployeeList();
 	}
 	
 }

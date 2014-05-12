@@ -27,6 +27,9 @@ public class HandlerMapping {
 		case "logout":
 			controller = new LogoutController();
 			break;
+		case "selectManager":
+			controller = new SelectManager();
+			break;
 		}
 		return controller;
 	}
