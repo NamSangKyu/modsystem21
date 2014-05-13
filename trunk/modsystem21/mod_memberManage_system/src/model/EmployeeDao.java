@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import config.MySQLConfig;
 import config.OracleConfig;
 
 public class EmployeeDao {
@@ -16,9 +17,9 @@ public class EmployeeDao {
 		super();
 		// TODO Auto-generated constructor stub
 		try {
-			Class.forName(OracleConfig.Driver);
+			Class.forName(MySQLConfig.Driver);
 			conn = DriverManager.getConnection(
-					OracleConfig.URL, OracleConfig.USER, OracleConfig.PASS);
+					MySQLConfig.URL, MySQLConfig.USER, MySQLConfig.PASS);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

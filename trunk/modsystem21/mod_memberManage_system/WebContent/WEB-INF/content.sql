@@ -31,6 +31,14 @@ create table employee(
 	dept  varchar2(40),
 	position  varchar2(40)
 )
-
-insert into EMPLOYEE values('nam2626','1234','nam2626@gmail.com','남상규','교육부','강사')
+create table employee(
+	id varchar(40) primary key,
+	pass varchar(40),
+	eId varchar(40),
+	name  varchar(40),
+	dept  varchar(40),
+	position  varchar(40)
+)
+delete from employee
+insert into EMPLOYEE values('nam2626',md5('1234'),'nam2626@gmail.com','남상규','교육부','강사')
 select * from employee
