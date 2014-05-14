@@ -28,5 +28,20 @@ public class EmployeeService {
 		// TODO Auto-generated method stub
 		return dao.getEmployeeList();
 	}
+
+	public ArrayList<EmployeeVO> getSAList() {
+		// TODO Auto-generated method stub
+		return dao.getSAList();
+	}
+
+	public ArrayList<EmployeeVO> getGSList() {
+		// TODO Auto-generated method stub
+		return dao.getGSList();
+	}
+
+	public ArrayList<EmployeeVO> getGLList() {
+		// TODO Auto-generated method stub
+		return dao.getGLList();
+	}
 	
 }
