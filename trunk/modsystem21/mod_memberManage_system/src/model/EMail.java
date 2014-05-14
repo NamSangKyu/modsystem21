@@ -38,7 +38,7 @@ public class EMail {
 	}
 
 	public void send(String from, String to, String cc, String title,
-			String content, String userId) {
+			String content) {
 		session = Session.getDefaultInstance(pro,
 				new EmailAuthenticator("modsystem21", "modmod1234"));
 
@@ -60,7 +60,7 @@ public class EMail {
 			
 			// 메일 제목
 			msg.setSubject(title);
-			// 내용
+			// 내용 
 			msg.setText(content);
 			// 보내는 날짜
 			msg.setSentDate(new Date());

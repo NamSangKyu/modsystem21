@@ -212,5 +212,26 @@ String sql = "select * from employee where dept='사업부'";
 				
 		return list;
 	}
+	public String getEmployee(String writer) {
+		// TODO Auto-generated method stub
+String sql = "select * from employee where dept='사업부'";
+		
+		PreparedStatement pstmt = null;
+		String str = "";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			rs.next();
+			str = rs.getString(5)+" "+rs.getString(4)+" " +rs.getString(6);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return str;
+	}
 	
 }

@@ -43,5 +43,10 @@ public class EmployeeService {
 		// TODO Auto-generated method stub
 		return dao.getGLList();
 	}
+
+	public String getEmployee(String writer) {
+		// TODO Auto-generated method stub
+		return dao.getEmployee(writer);
+	}
 	
 }

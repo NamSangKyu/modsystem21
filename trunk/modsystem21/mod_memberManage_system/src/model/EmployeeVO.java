@@ -1,6 +1,8 @@
 package model;
 
-public class EmployeeVO {
+import java.io.Serializable;
+
+public class EmployeeVO implements Serializable{
 	private String id;
 	private String pass;
 	private String eId;

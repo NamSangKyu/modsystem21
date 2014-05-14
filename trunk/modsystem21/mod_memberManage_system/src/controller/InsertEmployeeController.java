@@ -10,7 +10,7 @@ import model.EmployeeService;
 import model.EmployeeVO;
 import model.ModelAndView;
 
-public class InsertEmployeeInsert implements Controller {
+public class InsertEmployeeController implements Controller {
 
 	@Override
 	public ModelAndView execute(HttpServletRequest request,

@@ -51,4 +51,11 @@ insert into EMPLOYEE values('nam2628',md5('1234'),'nam2626@gmail.com','남상규
 insert into EMPLOYEE values('nam2618',md5('1234'),'nam2626@gmail.com','남상규9','관리부','주임');
 insert into EMPLOYEE values('nam2638',md5('1234'),'nam2626@gmail.com','남상규10','관리부','사원');
 insert into EMPLOYEE values('nam2648',md5('1234'),'nam2626@gmail.com','남상규11','관리부','과장');
+insert into EMPLOYEE values('nam1648',md5('1234'),'nam2626@hanmail.net','남상규11','관리부','과장');
+insert into EMPLOYEE values('nam6648',md5('1234'),'nam2626@naver.com','남상규11','관리부','과장');
+insert into EMPLOYEE values('nam5648',md5('1234'),'nam2626@gmail.com','남상규11','관리부','과장');
+insert into EMPLOYEE values('nam4648',md5('1234'),'nam2626@gmail.com','남상규11','관리부','과장');
+insert into EMPLOYEE values('nam3648',md5('1234'),'nam2626@gmail.com','남상규11','관리부','과장');
+insert into EMPLOYEE values('nam2648',md5('1234'),'nam2626@gmail.com','남상규11','관리부','과장');
+insert into EMPLOYEE values('nam2626',md5('1234'),'nam2626@gmail.com','남상규11','관리부','과장');
 select * from employee
