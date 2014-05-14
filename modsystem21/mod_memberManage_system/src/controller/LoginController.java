@@ -11,7 +11,7 @@ import model.EmployeeService;
 import model.EmployeeVO;
 import model.ModelAndView;
 
-public class Login implements Controller {
+public class LoginController implements Controller {
 
 	@Override
 	public ModelAndView execute(HttpServletRequest request,

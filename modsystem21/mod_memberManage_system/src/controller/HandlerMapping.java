@@ -19,17 +19,21 @@ public class HandlerMapping {
 		Controller controller = null;
 		switch(str){
 		case "employeeInsert":
-			controller = new InsertEmployeeInsert();
+			controller = new InsertEmployeeController();
 			break;
 		case "login":
-			controller = new Login();
+			controller = new LoginController();
 			break;
 		case "logout":
 			controller = new LogoutController();
 			break;
 		case "selectEmail":
-			controller = new SelectEmail();
+			controller = new SelectEmailController();
 			break;
+		case "insertContent":
+			controller = new InsertContentController();
+			break;
+			
 		}
 		return controller;
 	}

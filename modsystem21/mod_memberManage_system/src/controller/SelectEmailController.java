@@ -10,7 +10,7 @@ import model.EmployeeService;
 import model.EmployeeVO;
 import model.ModelAndView;
 
-public class SelectEmail implements Controller {
+public class SelectEmailController implements Controller {
 
 	@Override
 	public ModelAndView execute(HttpServletRequest request,
@@ -27,6 +27,9 @@ public class SelectEmail implements Controller {
 		session.setAttribute("mList", mlist);
 		session.setAttribute("gsList", gslist);
 		session.setAttribute("gList", glist);
+		session.setAttribute("mCount", mlist.size());
+		session.setAttribute("gsCount", gslist.size());
+		session.setAttribute("gCount", glist.size());
 		
 		return new ModelAndView("employee/selectEmployee.jsp", false);
 	}
