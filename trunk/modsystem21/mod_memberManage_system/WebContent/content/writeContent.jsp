@@ -7,9 +7,8 @@
 <title>글쓰기 페이지</title>
 <script type="text/javascript">
 	function selectManager() {
-		window.open("../Dispatcher?command=selectManager", "해당 매니저 선택창", "menu=no, toolbar=no", "width=360,height=240,top=200,left=300");		
+		window.open("../Dispatcher?command=selectEmail", "해당 매니저 선택창", "menu=no, toolbar=no", "width=360,height=240,top=200,left=300");		
 	}
-
 </script>
 </head>
 <body>

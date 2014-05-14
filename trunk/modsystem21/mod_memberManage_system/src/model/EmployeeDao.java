@@ -119,5 +119,98 @@ public class EmployeeDao {
 				
 		return list;
 	}
+	public ArrayList<EmployeeVO> getGLList() {
+		// TODO Auto-generated method stub
+String sql = "select * from employee where dept='관리부'";
+		
+		PreparedStatement pstmt = null;
+		ArrayList<EmployeeVO> list = new ArrayList<EmployeeVO>();
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				EmployeeVO vo = new EmployeeVO();
+				vo.setId(rs.getString(1));
+				vo.seteId(rs.getString(3));
+				vo.setName(rs.getString(4));
+				vo.setDept(rs.getString(5));
+				vo.setPosition(rs.getString(6));
+				list.add(vo);
+			}
+			if(list.size()==0)
+				list = null;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+				
+		return list;
+	}
+	public ArrayList<EmployeeVO> getGSList() {
+		// TODO Auto-generated method stub
+String sql = "select * from employee where dept='교육부'";
+		
+		PreparedStatement pstmt = null;
+		ArrayList<EmployeeVO> list = new ArrayList<EmployeeVO>();
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				EmployeeVO vo = new EmployeeVO();
+				vo.setId(rs.getString(1));
+				vo.seteId(rs.getString(3));
+				vo.setName(rs.getString(4));
+				vo.setDept(rs.getString(5));
+				vo.setPosition(rs.getString(6));
+				list.add(vo);
+			}
+			if(list.size()==0)
+				list = null;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+				
+		return list;
+	}
+	public ArrayList<EmployeeVO> getSAList() {
+		// TODO Auto-generated method stub
+String sql = "select * from employee where dept='사업부'";
+		
+		PreparedStatement pstmt = null;
+		ArrayList<EmployeeVO> list = new ArrayList<EmployeeVO>();
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				EmployeeVO vo = new EmployeeVO();
+				vo.setId(rs.getString(1));
+				vo.seteId(rs.getString(3));
+				vo.setName(rs.getString(4));
+				vo.setDept(rs.getString(5));
+				vo.setPosition(rs.getString(6));
+				list.add(vo);
+			}
+			if(list.size()==0)
+				list = null;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+				
+		return list;
+	}
 	
 }

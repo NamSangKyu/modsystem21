@@ -40,5 +40,15 @@ create table employee(
 	position  varchar(40)
 )
 delete from employee
-insert into EMPLOYEE values('nam2626',md5('1234'),'nam2626@gmail.com','남상규','교육부','강사')
+insert into EMPLOYEE values('nam2629',md5('1234'),'nam2626@gmail.com','남상규1','교육부','강사');
+insert into EMPLOYEE values('nam2621',md5('1234'),'nam2626@gmail.com','남상규2','교육부','강사');
+insert into EMPLOYEE values('nam2622',md5('1234'),'nam2626@gmail.com','남상규3','교육부','강사');
+insert into EMPLOYEE values('nam2623',md5('1234'),'nam2626@gmail.com','남상규4','사업부','사원');
+insert into EMPLOYEE values('nam2624',md5('1234'),'nam2626@gmail.com','남상규5','사업부','주임');
+insert into EMPLOYEE values('nam2625',md5('1234'),'nam2626@gmail.com','남상규6','사업부','대리');
+insert into EMPLOYEE values('nam2627',md5('1234'),'nam2626@gmail.com','남상규7','교육부','강사');
+insert into EMPLOYEE values('nam2628',md5('1234'),'nam2626@gmail.com','남상규8','교육부','강사');
+insert into EMPLOYEE values('nam2618',md5('1234'),'nam2626@gmail.com','남상규9','관리부','주임');
+insert into EMPLOYEE values('nam2638',md5('1234'),'nam2626@gmail.com','남상규10','관리부','사원');
+insert into EMPLOYEE values('nam2648',md5('1234'),'nam2626@gmail.com','남상규11','관리부','과장');
 select * from employee

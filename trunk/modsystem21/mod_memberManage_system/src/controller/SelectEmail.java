@@ -10,18 +10,23 @@ import model.EmployeeService;
 import model.EmployeeVO;
 import model.ModelAndView;
 
-public class SelectManager implements Controller {
+public class SelectEmail implements Controller {
 
 	@Override
 	public ModelAndView execute(HttpServletRequest request,
 			HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		
-		ArrayList<EmployeeVO> list = EmployeeService.getInstance().getEmployeeList();
+		ArrayList<EmployeeVO> mlist = EmployeeService.getInstance().getSAList();
+		ArrayList<EmployeeVO> gslist = EmployeeService.getInstance().getGSList();
+		ArrayList<EmployeeVO> glist = EmployeeService.getInstance().getGLList();
+		
 		
 		HttpSession session = request.getSession();
 		
-		session.setAttribute("mList", list);
+		session.setAttribute("mList", mlist);
+		session.setAttribute("gsList", gslist);
+		session.setAttribute("gList", glist);
 		
 		return new ModelAndView("employee/selectEmployee.jsp", false);
 	}
