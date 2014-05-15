@@ -17,6 +17,16 @@
 		<input type="hidden" name="writer" value="${sessionScope.vo.eId}">
 		<table align="center">
 			<tr>
+				<td>구분</td>
+				
+				<td>
+					<select>
+						<option value=""></option>
+					</select>
+					
+				</td>
+			</tr>
+			<tr>
 				<td>제목</td><td><input type="text" name="title"></td>
 			</tr>
 			<tr>
