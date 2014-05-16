@@ -1,9 +1,9 @@
 @CHARSET "UTF-8";
 .middle{
-		margin-top: 10%;
+		margin-top: 0%;
 }
 .index{
-	margin-top: 10%;
+	margin-top: 0%;
 	background-image: url("../img/main_back.jpg");
 	background-repeat:no-repeat;
 	background-size: 100%, 60%;
