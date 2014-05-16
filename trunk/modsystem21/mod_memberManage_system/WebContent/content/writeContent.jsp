@@ -20,10 +20,12 @@
 				<td>구분</td>
 				
 				<td>
-					<select>
-						<option value=""></option>
+					<select name="">
+						<option value="0">-전체-</option>
+						<option value="1">문제학생</option>
+						<option value="2">강의관련</option>
+						<option value="3">기타사항</option>
 					</select>
-					
 				</td>
 			</tr>
 			<tr>
