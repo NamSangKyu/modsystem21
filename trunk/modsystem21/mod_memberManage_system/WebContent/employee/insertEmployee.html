@@ -9,7 +9,7 @@
 	function hostSelect(host) {
 		var area = document.getElementById("email"); 	
 		if(host.value == "1"){
-			area.innerHTML = "<input type='text' id='i_host'>";
+			area.innerHTML = "<input type='text' id='i_host' style='width: 43%'>";
 		}else{
 			area.innerHTML = "";
 		}
@@ -63,34 +63,32 @@
 <body>
 <form action="Dispatcher" method="post" name="m_insert">
 <input type="hidden" name="command" value="employeeInsert">
-<table border="0" width="350" align="center" class="middle">
-	<tr>
-		<td width="100">아이디</td><td><input type="text" id="id" name="id"></td>
+<table border="0" style="width: 100%" align="center" class="middle">
+	<tr align="center">
+		<td>아이디<input type="text" id="id" name="id" style="width: 100%"></td>
 	</tr>
-	<tr>
-		<td>암호</td><td><input type="password" id="pass1" name="pass1"></td>
+	<tr align="center">
+		<td>암호<input type="password" id="pass1" name="pass1" style="width: 100%"></td>
 	</tr>
-	<tr>
-		<td>암호확인</td><td><input type="password" id="pass2" name="pass2" onkeyup="passCheck()"><br><span id="passArea"></span></td>
+	<tr align="center"> 
+		<td>암호확인<input type="password" id="pass2" name="pass2" onkeyup="passCheck()" style="width: 100%"><br><span id="passArea" style="width: 100%"></span></td>
 	</tr>
-	<tr>
-		<td>이메일</td>
-		<td><input type="text" id="eId" name="eId">@
-		<select id="host" onclick="hostSelect(host)">
+	<tr align="center">
+		<td>이메일<br>
+		<input type="text" id="eId" name="eId"style="width: 44%">@
+		<select id="host" onclick="hostSelect(host)" style="width: 10%">
 			<option value="hanmail.net">hanmail.net</option>
 			<option value="nate.com">nate.com</option>
 			<option value="naver.net">naver.com</option>
 			<option value="gmail.com">gmail.com</option>
 			<option value="1">직접입력</option> 
 		</select>
-		<span id="email"></span>
-		
+		<span id="email"></span>		
 		</td>
 	</tr>
-	<tr>
-		<td>부서</td>
-		<td>
-		<select name="dept">
+	<tr align="center">
+		<td>부서
+		<select name="dept" style="width: 100%">
 			<option value="0">사업부</option>
 			<option value="1">교육부</option>
 			<option value="2">관리부</option>
@@ -98,9 +96,8 @@
 		</td>
 	</tr>
 	<tr>
-		<td>직급</td>
-		<td>
-		<select name="position" multiple="multiple" size="7">
+		<td>직급
+		<select name="position" style="width: 100%">
 			<option value="0">부장</option>
 			<option value="1">과장</option>
 			<option value="2">대리</option>
@@ -111,7 +108,7 @@
 		</td>
 	</tr>
 	<tfoot>
-	<tr>
+	<tr align="center">
 		<td colspan="2" align="right">
 			<input type="button" value="회원가입" onclick="idCheck()">
 			<input type="button" value="가입취소" onclick="cancel()">
